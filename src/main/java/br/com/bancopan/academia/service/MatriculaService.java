@@ -17,7 +17,7 @@ public class MatriculaService {
     MatriculaRepository matriculaRepository;
 
     @Transactional
-    private MatriculaEntity save(MatriculaEntity matricula) {
+    public MatriculaEntity save(MatriculaEntity matricula) {
         return matriculaRepository.save(matricula);
     }
 
@@ -25,11 +25,11 @@ public class MatriculaService {
         return matriculaRepository.findAll();
     }
 
-    public List<MatriculaEntity> findById(Long alunoId) {
+    public List<MatriculaEntity> findByAlunoId(Long alunoId) {
         return matriculaRepository.findByAlunoId(alunoId);
     }
 
-    public MatriculaEntity buscarPorId(Long id) {
+    public MatriculaEntity findById(Long id) {
         return matriculaRepository.findById(id).orElseThrow(()
                 -> new ObjectNotFoundException("Não foi possível encontrar uma matrícula com ID " + id));
     }

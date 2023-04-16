@@ -13,6 +13,6 @@ public interface AlunoRepository extends JpaRepository<AlunoEntity, Long> {
 
     List<AlunoEntity> findByNomeContainingIgnoreCase(String nome);
 
-    @Query("SELECT a.id FROM Aluno a WHERE a.cpf = :cpf")
+    @Query("SELECT a.id FROM AlunoEntity a WHERE a.cpf = :cpf")
     Long buscarIdAlunoPorCPF(@Param("cpf") String cpf);
 }

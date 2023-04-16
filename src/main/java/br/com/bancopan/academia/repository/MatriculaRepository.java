@@ -12,7 +12,7 @@ public interface MatriculaRepository extends JpaRepository<MatriculaEntity, Long
 
     List<MatriculaEntity> findByAlunoId(Long alunoId);
 
-    @Query("FROM Matricula m WHERE m.aluno.id = :alunoId AND m.ativa = true")
+    @Query("FROM MatriculaEntity m WHERE m.aluno.id = :alunoId AND m.ativa = true")
     Optional<MatriculaEntity> findAtivaByAlunoId(Long alunoId);
 
     List<MatriculaEntity> findByDataMatriculaBetween(LocalDateTime data1, LocalDateTime data2);
