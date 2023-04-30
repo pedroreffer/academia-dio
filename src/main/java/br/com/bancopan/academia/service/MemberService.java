@@ -1,7 +1,7 @@
 package br.com.bancopan.academia.service;
 
-import br.com.bancopan.academia.model.domain.AlunoEntity;
-import br.com.bancopan.academia.repository.AlunoRepository;
+import br.com.bancopan.academia.model.domain.GymMemberEntity;
+import br.com.bancopan.academia.repository.MemberRepository;
 import br.com.bancopan.academia.service.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -12,27 +12,27 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AlunoService {
+public class MemberService {
 
     @Autowired
-    private AlunoRepository alunoRepository;
+    private MemberRepository alunoRepository;
 
-    public List<AlunoEntity> findAll(){
+    public List<GymMemberEntity> findAll(){
         return alunoRepository.findAll();
     }
 
-    public AlunoEntity create(AlunoEntity aluno) {
+    public GymMemberEntity create(GymMemberEntity aluno) {
         aluno = alunoRepository.save(aluno);
         return aluno;
     }
 
-    public AlunoEntity findById(Long id) {
-        Optional<AlunoEntity> obj = alunoRepository.findById(id);
+    public GymMemberEntity findById(Long id) {
+        Optional<GymMemberEntity> obj = alunoRepository.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException(
-                "Objeto não encontrado! Id: " + id + ", Tipo: " + AlunoEntity.class.getName()));
+                "Objeto não encontrado! Id: " + id + ", Tipo: " + GymMemberEntity.class.getName()));
     }
 
-    public List<AlunoEntity> findByNome(String nome){
+    public List<GymMemberEntity> findByNome(String nome){
         return alunoRepository.findByNomeContainingIgnoreCase(nome);
     }
 

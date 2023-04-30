@@ -1,13 +1,13 @@
 package br.com.bancopan.academia.model.dto;
 
-import br.com.bancopan.academia.model.domain.AlunoEntity;
+import br.com.bancopan.academia.model.domain.GymMemberEntity;
 import com.sun.istack.NotNull;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
-public class AvaliacaoDto {
+public class AvaliationDto {
 
     private Long id;
     @NotNull
@@ -16,6 +16,6 @@ public class AvaliacaoDto {
     @NotNull
     private Double altura;
 
-    private AlunoEntity aluno;
+    private GymMemberEntity aluno;
     private LocalDateTime dataAvaliacao;
 }

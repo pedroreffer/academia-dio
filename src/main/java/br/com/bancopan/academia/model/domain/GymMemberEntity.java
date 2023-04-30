@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class AlunoEntity implements Serializable {
+public class GymMemberEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -31,5 +31,5 @@ public class AlunoEntity implements Serializable {
     private LocalDate dataNascimento;
 
     @OneToMany(mappedBy = "aluno")
-    private List<AvaliacaoEntity> avaliacoes;
+    private List<AvaliationEntity> avaliacoes;
 }

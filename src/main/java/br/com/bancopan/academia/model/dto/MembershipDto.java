@@ -5,11 +5,11 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class MatriculaDto {
+public class MembershipDto {
 
     private Long id;
     private Boolean ativa;
     private LocalDateTime dataMatricula;
     private LocalDateTime dataDesmatricula;
-    private AlunoDto aluno;
+    private MemberEntity aluno;
 }

@@ -10,11 +10,11 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "matricula")
+@Table(name = "avaliacao")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class MatriculaEntity implements Serializable {
+public class AvaliationEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,17 +22,18 @@ public class MatriculaEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "aluno_id", nullable = false)
-    private AlunoEntity aluno;
+    private GymMemberEntity aluno;
 
     @CreationTimestamp
     @Column(columnDefinition = "timestamp", nullable = false)
-    private LocalDateTime dataMatricula;
+    private LocalDateTime dataAvaliacao;
 
     @Column(nullable = false)
-    private Boolean ativa = Boolean.TRUE;
+    private Double peso;
 
-    @Column(columnDefinition = "timestamp")
-    private LocalDateTime dataDesmatricula = null;
+    @Column(nullable = false)
+    private Double altura;
+
 }

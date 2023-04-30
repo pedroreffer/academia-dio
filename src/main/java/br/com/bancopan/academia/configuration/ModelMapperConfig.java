@@ -1,7 +1,7 @@
 package br.com.bancopan.academia.configuration;
 
-import br.com.bancopan.academia.model.domain.AvaliacaoEntity;
-import br.com.bancopan.academia.model.dto.AvaliacaoDto;
+import br.com.bancopan.academia.model.domain.AvaliationEntity;
+import br.com.bancopan.academia.model.dto.AvaliationDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ public class ModelMapperConfig {
     public ModelMapper modelMapper() {
         var mapper = new ModelMapper();
 
-        var avaliacaoMapper = mapper.createTypeMap(AvaliacaoEntity.class, AvaliacaoDto.class);
+        var avaliacaoMapper = mapper.createTypeMap(AvaliationEntity.class, AvaliationDto.class);
 
         return mapper;
     }
